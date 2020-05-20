@@ -54,7 +54,9 @@ attach Seatle Lab mail
 -------------------------------------------------
 Create an array of buffer with 'A's
 
-==> run a0.py
+==> run a0.py with arguments (Target IP and PORT)
+(Eg. python a0.py 192.168.220.132 110)
+
 crashed @ 2900
 
 EIP overwritten with AAAA (41414141) 	(observe on Immunity Debugger)
@@ -70,7 +72,7 @@ Created unique pattern with a1.py to identify the location of EIP
 copy & paste ruby script with length of 2700
 (/usr/share/metasploit-framsework/tools/exploit/pattern_create.rb -l 2700)
 
-==> run a1.py
+==> run a1.py with arguments (Target IP and PORT)
 
 EIP overwritten with value		(observe on Immunity Debugger)
 locate and copy EIP value on DBG (eg. 39694438)
@@ -91,7 +93,7 @@ Create a buffer pattern to ensure the EIP control
 ( 2606*A + 4*B + 90*C)
 "A"s     EIP      Payload(shellcode)
 
-==> run a2.py
+==> run a2.py  with arguments (Target IP and PORT)
 
 EIP overwritten with BBBB (42424242) 	(observe on Immunity Debugger)
 Note that we can control the EIP
@@ -105,7 +107,7 @@ attach Seatle Lab mail
 Identify bad characters (01)
 by sending all possible characters as payload part (skip \x00 -->common bad character)
 
-==> run bad1.py
+==> run bad1.py with arguments (Target IP and PORT)
 
 Identify firts missed bad character to skip in shellcode(eg. \x0a ) 
 
@@ -118,7 +120,7 @@ attach Seatle Lab mail
 Identify bad characters (02)
 by sending all possible characters except identified character (\x00 & \x0a) as payload part
 
-==> run bad2.py
+==> run bad2.py with arguments (Target IP and PORT)
 
 Identify next missed bad character to skip in shellcode(eg. \x0d ) 
 
@@ -131,7 +133,7 @@ attach Seatle Lab mail
 Identify bad characters (03)
 by sending all possible characters ecxept identified characters (\x00,\x0a & \x0d ) as payload part
 
-==> run bad3.py
+==> run bad3.py with arguments (Target IP and PORT)
 
 Identify next missed bad character to skip in shellcode(eg. no any character) 
 
@@ -175,7 +177,7 @@ open another terminal for netcat listener
 ==> nc -nlvp 443 
     (same port used in shellcode creation)
 
-==> run exploit.py
+==> run exploit.py with arguments (Target IP and PORT)
 
 DONE! GOT --> system reverse shell of target machine
 
