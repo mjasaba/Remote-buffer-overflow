@@ -138,7 +138,8 @@ by sending all possible characters ecxept identified characters (\x00,\x0a & \x0
 Identify next missed bad character to skip in shellcode(eg. no any character) 
 
 start Seatle Lab mail 
-(run exploit.py without Immunity DBG) 
+(run exploit.py without Immunity DBG)
+
 ------------------------------------------------------
 
 to create final exploitation script
@@ -153,13 +154,14 @@ copy & paste ruby script
 	note value to identify the address using mona script (eg. FFE4)
 
 On immunity debugger run mona scripts
+	
 	!mona modules
 		note the slmfc.ll file - false value with Rebase, safeSEH, ALSR & NXcompat
 
 	!mona find -s "\xff\xe4" -m slmfc.dll (FFE4 copied from nasm shell)
 		copy the address of one of the result
  
-                        ..........................
+ ..........................
 
 create shellcode using mfsvenom 	 
 
